@@ -83,7 +83,7 @@ function checkSelectAll()  {
 
   function regexId(){
     var _tmp = document.getElementById("inputId0");
-    window.onkeydown = (e) => {
+    window.onkeydown = (e) => {  // 키보드 입력후 키보드입력이 끝날경우 발생하는 이벤트
       if(_tmp == null)// 입력값이 아예 없을때
       {
         document.getElementById("inputReturn0").style.display = "block";
