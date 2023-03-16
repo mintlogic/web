@@ -145,17 +145,17 @@ function checkSelectAll()  {
   function chkPw(){
       var _org1Pw = document.getElementById("inputPw1");
       var _org2Pw = document.getElementById("inputPw2");
-      if(_org1Pw.value === _org2Pw.value){
-        return 1;
-      }else if(_org1Pw.value === '' || _org1Pw == null){
+      if(_org1Pw.value === '' || _org1Pw == null){
         debugMsg("1번 비었음");
         if((_org2Pw.value === '' || _org2Pw == null))
         {
           debugMsg("2번 비었음");
           return 0;
         }
+      }else if(_org1Pw.value === _org2Pw.value){
+          return 1;
       }else{
-          return 0;
+        return 0;
       }
   }
 
