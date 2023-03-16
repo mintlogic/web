@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./styleTerms.css" />
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div id="lang">
+                <select name="한국어">
+                    <option selected="selected" value="kr">한국어</option>
+                    <option value="en">영어</option>
+                    <option  value="jp">일어</option>
+                </select>
+            </div>
+            <div id="logo">
+                <img class="logo_img" src="./img/logo.png">
+            </div>
+        </div>
+        <div id="container">
+            <div id="content">
+                <form id="termsFormdata" action="join.html">
+                    <div id="terms_all_chk_group">
+                        <input type="checkbox" one="checkAll" name="checkAll" id="checker0" onclick='selectAll(this)' ><label class="checkStyle" for="checker0"></label>
+                        <label class="terms_all_title">네이버 이용약관에 전체동의
+                        </label>
+                    </div>
+                    <div id="terms_1_group">
+                        <div id="terms_1_chk">
+                            <input type="checkbox" one="checkForm" name="check1" id="checker1" onclick='checkSelectAll()'><label class="checkStyle"  for="checker1"></label>
+                            <label class="terms_all_title">네이버 이용약관에 동의
+                                <span class="terms_highlight_1">(필수)</span>
+                            </label>
+                        </div>
+                        <div id="terms_1_txt">
+                            <div id="article">
+                                <h3 class="article_title">여러분을 환영합니다.</h3>
+                                <p class="article_content">
+                                    HTML클론 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다.
+                                    본 내용은 약관과 아무런 상관이 없으며 앞으로도 약관내용을 꼭
+                                    봐주시길 바랍니다.
+                                </p>
+                                <p class="article_content">
+                                    1. 동해물과 백두산이 마르고 닳도록
+                                    하느님이 보우하사 우리나라 만세
+                                    무궁화 삼천리 화려 강산
+                                    대한 사람 대한으로 길이 보전하세
+                                </p>
+                                <p class="article_content">
+                                    2. 남산 위에 저 소나무 철갑을 두른 듯
+                                    바람 서리 불변함은 우리 기상일세
+                                    무궁화 삼천리 화려 강산
+                                    대한 사람 대한으로 길이 보전하세
+                                </p>
+                                <p class="article_content">
+                                    3. 가을 하늘 공활한데 높고 구름 없이
+                                    밝은 달은 우리 가슴 일편단심일세
+                                    무궁화 삼천리 화려 강산
+                                    대한 사람 대한으로 길이 보전하세
+                                </p>
+                                <p class="article_content">
+                                    4. 이 기상과 이 맘으로 충성을 다하여
+                                    괴로우나 즐거우나 나라 사랑하세
+                                    무궁화 삼천리 화려 강산
+                                    대한 사람 대한으로 길이 보전하세
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="terms_2_group">
+                        <div id="terms_2_chk">
+                            <input type="checkbox" one="checkForm" name="check2" id="checker2" onclick='checkSelectAll()'><label class="checkStyle"  for="checker2"></label>
+                            <label class="terms_all_title">개인정보 수집 및 이용 동의
+                                <span class="terms_highlight_1">(필수)</span>
+                            </label>
+                        </div>
+                        <div id="terms_2_txt">
+                            <div id="article">
+                                <p class="article_content">
+                                    여기서부터는 개인정보 수집 및 이용 동의 입니다.
+                                </p>
+                                <p class="article_content">
+                                    1. 동해물과 백두산이 마르고 닳도록
+                                    하느님이 보우하사 우리나라 만세
+                                    무궁화 삼천리 화려 강산
+                                    대한 사람 대한으로 길이 보전하세
+                                </p>
+                                <p class="article_content">
+                                    2. 남산 위에 저 소나무 철갑을 두른 듯
+                                    바람 서리 불변함은 우리 기상일세
+                                    무궁화 삼천리 화려 강산
+                                    대한 사람 대한으로 길이 보전하세
+                                </p>
+                                <p class="article_content">
+                                    3. 가을 하늘 공활한데 높고 구름 없이
+                                    밝은 달은 우리 가슴 일편단심일세
+                                    무궁화 삼천리 화려 강산
+                                    대한 사람 대한으로 길이 보전하세
+                                </p>
+                                <p class="article_content">
+                                    4. 이 기상과 이 맘으로 충성을 다하여
+                                    괴로우나 즐거우나 나라 사랑하세
+                                    무궁화 삼천리 화려 강산
+                                    대한 사람 대한으로 길이 보전하세
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="terms_3_group">
+                        <div id="terms_3_chk">
+                            <input type="checkbox" one="checkForm" name="check3" id="checker3" onclick='checkSelectAll()'><label class="checkStyle"  for="checker3"></label>
+                            <label class="terms_all_title">위치기반서비스 이용약관 동의
+                                <span class="terms_highlight_2">(선택)</span>
+                            </label>
+                        </div>
+                        <div id="terms_3_txt">
+                            <div id="article">
+                                <h3 class="article_title">여러분을 환영합니다.</h3>
+                                <p class="article_content">
+                                    HTML클론 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다.
+                                    본 내용은 약관과 아무런 상관이 없으며 앞으로도 약관내용을 꼭
+                                    봐주시길 바랍니다.
+                                </p>
+                                <p class="article_content">
+                                    1. 동해물과 백두산이 마르고 닳도록
+                                    하느님이 보우하사 우리나라 만세
+                                    무궁화 삼천리 화려 강산
+                                    대한 사람 대한으로 길이 보전하세
+                                </p>
+                                <p class="article_content">
+                                    2. 남산 위에 저 소나무 철갑을 두른 듯
+                                    바람 서리 불변함은 우리 기상일세
+                                    무궁화 삼천리 화려 강산
+                                    대한 사람 대한으로 길이 보전하세
+                                </p>
+                                <p class="article_content">
+                                    3. 가을 하늘 공활한데 높고 구름 없이
+                                    밝은 달은 우리 가슴 일편단심일세
+                                    무궁화 삼천리 화려 강산
+                                    대한 사람 대한으로 길이 보전하세
+                                </p>
+                                <p class="article_content">
+                                    4. 이 기상과 이 맘으로 충성을 다하여
+                                    괴로우나 즐거우나 나라 사랑하세
+                                    무궁화 삼천리 화려 강산
+                                    대한 사람 대한으로 길이 보전하세
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="terms_action_button_group">
+                        <span>
+                            <a href="javascript:alert('준비중입니다.');" id="btnCancel" class="btn_type btnDefault">취소</a>
+                        </span>
+                        <span>
+                            <a href="javascript:nextStep(1);" id="btnAgree" class="btn_type btnNext">확인</a>
+                        </span>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="footer_content">
+                Copyright mintlogic Opensource : github.com/mintlogic
+            </div>
+         </div>
+    </div>
+    <script onload src="./util.js"></script>
+</body>
+</html>

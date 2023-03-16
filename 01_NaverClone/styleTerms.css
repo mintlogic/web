@@ -1,0 +1,164 @@
+div {
+
+    border : 0px solid red;
+    /* 디버깅용 테두리 */
+
+}
+
+body{
+  background-color:#f5f6f7;
+  /* 배경색상 */
+}
+
+.wrap {
+    width:100%;
+    /* 화면크기 변화 대응을 위해서 100%으로 해상도 조절에 대응 */
+}
+
+#header,
+#content,
+#footer {
+    max-width:460px;
+    margin : 0 auto;
+    /* 헤더,본문,푸터 는 최대크기를 지정하여 모양이 꺠지는것을 방지 , 중앙정렬 */
+}
+
+#logo .logo_img{
+    position:block;
+    padding-left:120px;
+    padding-top:50px;
+    padding-bottom:30px;
+    width:50%;
+    /* 로고 스플릿은 습득시간이 매우걸려 대표 로고로 이미지 조절로 대응*/
+}
+
+#lang {
+    float:right;
+    padding-bottom:4px;
+    /* 언어선택은 헤더측 기반으로 고정을 함*/
+}
+
+input[type=checkbox] {
+    display:none;
+  }
+  input[type=checkbox] + label { 
+    cursor: pointer; 
+    padding-left: 23px; 
+    background-repeat: no-repeat;
+    background-image: url('./img/checkkoff.png');
+  }
+  input[type=checkbox]:checked + label {
+    background-image: url('./img/checkon.png');
+  }
+  input[type=checkbox]:disabled + label {
+    background-image: url('./img/checkdisable.png');
+  }
+  /* https://myhappyman.tistory.com/137 수많은 커스텀 checkbox 중에서 제일 직관적이여 채택후 습득 */
+
+#terms_1_txt,
+#terms_2_txt,
+#terms_3_txt {
+
+  /* 약관박스 div로 설계후 디자인 적용 */
+  background-color:white;
+  border:1px solid gray;
+  color:black;
+  overflow-x: scroll; 
+  padding:12px;
+  height:88px;
+}
+#terms_1_group,
+#terms_2_group,
+#terms_3_group{
+  padding-top: 10px;
+}
+
+#terms_1_chk,
+#terms_2_chk,
+#terms_3_chk{
+  padding-bottom:3px;
+}
+
+.terms_all_title{
+  font-size:15px;
+  font-weight:bold;
+}
+
+.terms_highlight_1{
+  color:yellowgreen;
+}
+
+.terms_highlight_2{
+  color:gray;
+}
+
+.checkStyle{
+  position: relative;
+  top: 3px; /* 체크박스 높낮이 조절 */
+}
+
+.terms_action_button_group{
+  width:auto;
+  margin:0 5px;
+}
+
+.btn_type{
+  display:block;
+  margin:0 5px;
+  padding: 15px 0 15px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box
+}
+
+#terms_action_button_group {
+  padding-top:25px;
+  height:60px;
+  /* 취소 및 가입 버튼 */
+}
+
+
+#terms_action_button_group > span{
+  
+  display:block;
+  float:left;
+  width:50%;
+
+}
+
+
+.btnNext{
+  color:white;
+  background-color: #03c75a;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btnDefault{
+  color:white;
+  background-color: gray;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#footer{
+ 
+  font-size:10px;
+  /* 푸터에서는 글자 크기조절을 가능하지만 중앙정렬이 되지 않으므로 조만간 구조 분석후 재정리 예정*/
+}
+
+
+.article_title{
+  font-weight:bold;
+  color:black;
+  line-height:1px;
+  font-size:12px;
+  /* 네이버 약관을 분석 하면서 약관div 속에서도 title 과 content로 나뉘어진것을 파악후 추가*/
+}
+
+.article_content{
+  color:black;
+  font-size:10px;
+}

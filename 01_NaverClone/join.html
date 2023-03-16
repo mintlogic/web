@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./styleJoin.css" />
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+        
+            <div id="logo">
+                <img class="logo_img" src="./img/logo.png">
+            </div>
+        </div>
+        <div id="container">
+            <div id="content">
+                <form id="joinFormdata" action="terms.html">
+                    <div id="field">
+                        <p class="field_title">
+                            아이디
+                        </p>
+                        <div class="inputBox">
+                            <input type="text" class="inputStyle" id="inputId0" onClick="regexId()" placeholder="아이디를 입력하세요">
+                            <span class="inputDynamic">@naver.com</span>
+                        </div>
+                        <div class="inputReturnstyle" id="inputReturn0">
+                            reserved
+                        </div>
+                    </div>
+
+                    <div id="field">
+                        <p class="field_title">
+                            비밀번호
+                        </p>
+                        <div class="inputBox">
+                            <input type="text" class="inputStyle" id="inputPw1" onClick="regexPw()" placeholder="비밀번호를 입력하세요">
+                            <span class="inputDynamic">자물쇠이미지</span>
+                        </div>
+                        <div class="inputReturnstyle" id="inputReturn1">
+                            reserved
+                        </div>
+                    </div>
+
+                    <div id="field">
+                        <p class="field_title">
+                            비밀번호 재확인
+                        </p>
+                        <div class="inputBox">
+                            <input type="text" class="inputStyle" id="inputPw2" onClick="samePw()" placeholder="비밀번호를 입력하세요">
+                            <span class="inputDynamic">자물쇠이미지</span>
+                        </div>
+                        <div class="inputReturnstyle" id="inputReturn2">
+                            reserved
+                        </div>
+                    </div>
+                    
+                   <div id="join_action_button_group">
+                    <span>
+                        <a href="javascript:nextStep(2);" id="btnAgree" class="btn_type btnNext">가입하기</a>
+                    </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="footer_content">
+                Copyright mintlogic Opensource : github.com/mintlogic
+            </div>
+         </div>
+    </div>
+    <script onload src="./util.js"></script>
+</body>
+</html>

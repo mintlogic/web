@@ -1,0 +1,130 @@
+div {
+
+    border : 0px solid red;
+    /* 디버깅용 테두리 */
+
+}
+
+body{
+  background-color:#f5f6f7;
+  /* background-color:white; */
+  
+}
+
+.wrap {
+    width:100%;
+}
+
+#header,
+#content,
+#footer {
+    max-width:460px;
+    margin : 0 auto;
+}
+
+#logo .logo_img{
+    position:block;
+    padding-left:120px;
+    padding-top:50px;
+    padding-bottom:30px;
+    width:50%;
+}
+
+.btn_type{
+  display:block;
+  margin:0 5px;
+  padding: 15px 0 15px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box
+}
+
+#join_action_button_group {
+  padding-top:25px;
+  height:60px;
+}
+
+
+#join_action_button_group > span{
+  display:block;
+  float:left;
+  width:100%;
+}
+
+.btnNext{
+  color:white;
+  background-color: #03c75a;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#footer{
+  font-size:10px;
+}
+
+
+
+.article_title{
+  font-weight:bold;
+  color:black;
+  line-height:1px;
+  font-size:12px;
+}
+
+.article_content{
+  color:black;
+  font-size:10px;
+}
+
+/* 위에는 styleTerms 구조가 비슷 */
+
+.inputBox{
+  background-color: white;
+  /* div 안에 input박스가 있고 하나처럼 만들어주기 위한 효과 */
+}
+  .inputBox > input{
+    border:none;
+    display:relative;
+    padding:8px;
+    width:346px;
+    /* 인풋박스 테두리 지우고 div 높낮이에 맞게 자동화 , 인풋길이를 제한 */
+  }
+
+.field_title{
+
+  font-size:10px;
+  font-weight:bold;
+  /*  입력 상자별 이름표 */
+}
+
+.inputBox:focus-within {
+  width: 100%;
+  color: #111111;
+  border: 1px #03c75a solid;
+  /* input박스 선택시 테두리 효과 
+     참고 : https://moo-you.tistory.com/403
+  */
+}
+
+.inputStyle  {
+  outline:none;
+  /* 입력박스 : 테두리 삭제 */
+}
+
+.inputBox > .inputDynamic{
+  display:relative;
+  font-size:14px;
+  padding-right:2px;
+  padding-top:2px;
+  padding-bottom:5px;
+  /* DIV(INPUTBOX,INPUTDYNAMIC) 만든이유 : 이메일 같은경우 @naver.com , 이모티콘으로 사용자 입력상태 helper?? */
+}
+
+.inputReturnstyle {
+  display:none;
+  padding:2px;
+  font-size:12px;
+  /* 아이디 , 비밀번호 , 등등 사용자가 미스입력시 출력해줄 helper */
+}
