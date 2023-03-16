@@ -54,12 +54,17 @@ function checkSelectAll()  {
 
       if(_tmp1 == null || _tmp1.value == ''){
         debugMsg("1번 필드 : null 값");
+        alert("아이디가 비어있습니다.");
       }else if(_tmp2 == null || _tmp2.value == ''){
         debugMsg("2번 필드 : null 값");
+        alert("비밀번호가 비어있습니다.");
       }else if(_tmp3 == null || _tmp3.value == ''){
         debugMsg("3번 필드 : null 값");
+        alert("비밀번호 재확인이 비어있습니다.");
       }else{
         if(chkPw() == 1){
+          // 마지막으로 입력필드 재점검후 이상 없으면 2번모드로 실행
+          alert("가입이 완료 되었습니다");
           goPage(2); // 회원정보를 submit을 하기위한 함수 ( form 액션으로 처리 못한 이유도 함수안에 이야기가.....ㅠㅠ )
         }else{
           alert("비밀번호가 틀립니다!");
@@ -97,11 +102,17 @@ function checkSelectAll()  {
 
   function regexPw(){
     window.onkeyup = (e) => {
-        var _tmp = document.getElementById("inputPw1");
-
-        if(_tmp.value === '' || _tmp == null ){
+        var _tmp1 = document.getElementById("inputPw1");
+        var _tmp2 = document.getElementById("inputPw2");
+        if(_tmp1.value != _tmp2.value){ 
+          // 원본비번 , 비교대상 비번 값이 다르면 비번재입령창 초기화
+          document.getElementById("inputReturn2").style.display = "none";
+          document.getElementById("inputPw2").value = '';
+        }
+        if(_tmp1.value === ''){
           document.getElementById("inputReturn1").style.display = "block";
           document.getElementById("inputReturn1").innerHTML = " : <font color=\"red\">비밀번호는 필수 입력입니다.</font>";
+          
         }else{
           document.getElementById("inputReturn1").style.display = "none";
         }
@@ -112,21 +123,16 @@ function checkSelectAll()  {
     window.onkeyup = (e) => {
       var _org1Pw = document.getElementById("inputPw1");
       var _org2Pw = document.getElementById("inputPw2");
-      if(_org1Pw.value === '' || _org1Pw == null){
-        debugMsg("1번 비었음");
-        if((_org2Pw.value === '' || _org2Pw == null))
-        {
-          debugMsg("2번 비었음");
-          document.getElementById("inputReturn2").style.display = "block";
-          document.getElementById("inputReturn2").innerHTML = "<font color=\"red\">입력하신 비밀번호가 비어있습니다.</font>";
-        }
+      if(_org1Pw.value === '' || _org1Pw.value === ''){
+        document.getElementById("inputReturn2").style.display = "block";
+        document.getElementById("inputReturn2").innerHTML = "<font color=\"red\">입력하신 비밀번호가 비어있습니다.</font>";
+      }else if(_org1Pw.value != _org2Pw.value){
+        document.getElementById("inputReturn2").style.display = "block";
+        document.getElementById("inputReturn2").innerHTML = "<font color=\"red\">입력하신 비밀번호가 틀렸습니다.</font>";
       }else if(_org1Pw.value === _org2Pw.value){
         document.getElementById("inputReturn2").style.display = "block";
         document.getElementById("inputReturn2").innerHTML = "<font color=\"#03c75a\">입력하신 비밀번호가 같습니다.</font>";
-      
-      }else{
-        document.getElementById("inputReturn2").style.display = "block";
-        document.getElementById("inputReturn2").innerHTML = "<font color=\"red\">입력하신 비밀번호가 틀립니다.</font>";
+     
       }
     }
   }
@@ -134,17 +140,11 @@ function checkSelectAll()  {
   function chkPw(){
       var _org1Pw = document.getElementById("inputPw1");
       var _org2Pw = document.getElementById("inputPw2");
-      if(_org1Pw.value === '' || _org1Pw == null){
-        debugMsg("1번 비었음");
-        if((_org2Pw.value === '' || _org2Pw == null))
-        {
-          debugMsg("2번 비었음");
-          return 0;
-        }
+      if(_org1Pw.value === '' || _org2Pw.value === ''){
+        debugMsg("1,2번 비었음");
+        return 0;
       }else if(_org1Pw.value === _org2Pw.value){
           return 1; // 값이 같을경우
-      }else{
-        return 0;
       }
   }
 
