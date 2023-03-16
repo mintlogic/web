@@ -83,52 +83,60 @@ function checkSelectAll()  {
 
   function regexId(){
     var _tmp = document.getElementById("inputId0");
-    if(_tmp == null)// 입력값이 아예 없을때
-    {
-      document.getElementById("inputReturn0").style.display = "block";
-      document.getElementById("inputReturn0").innerHTML = " : <font color=\"red\">아이디는 필수 입력입니다.</font>";
-    }
-    
-    if(_tmp.value === ''){ // 입력값이 비어있을때
-      document.getElementById("inputReturn0").style.display = "block";
-      document.getElementById("inputReturn0").innerHTML = " : <font color=\"red\">아이디는 필수 입력입니다.</font>";
-    }else{
-      document.getElementById("inputReturn0").style.display = "none"; // 그 외에는 helper 메세지 div 를 감춘다.
+    window.onkeydown = (e) => {
+      if(_tmp == null)// 입력값이 아예 없을때
+      {
+        document.getElementById("inputReturn0").style.display = "block";
+        document.getElementById("inputReturn0").innerHTML = " : <font color=\"red\">아이디는 필수 입력입니다.</font>";
+      }
+      
+      if(_tmp.value === ''){ // 입력값이 비어있을때
+        document.getElementById("inputReturn0").style.display = "block";
+        document.getElementById("inputReturn0").innerHTML = " : <font color=\"red\">아이디는 필수 입력입니다.</font>";
+      }else{
+        document.getElementById("inputReturn0").style.display = "none"; // 그 외에는 helper 메세지 div 를 감춘다.
+      }
     }
   }
 
   function regexPw(){
     var _tmp = document.getElementById("inputPw1");
-    if(_tmp == null)
-    {
-      document.getElementById("inputReturn1").style.display = "block";
-      document.getElementById("inputReturn1").innerHTML = " : <font color=\"red\">비밀번호는 필수 입력입니다.</font>";
-    }
-    
-    if(_tmp.value === ''){
-      document.getElementById("inputReturn1").style.display = "block";
-      document.getElementById("inputReturn1").innerHTML = " : <font color=\"red\">비밀번호는 필수 입력입니다.</font>";
-    }else{
-      document.getElementById("inputReturn1").style.display = "none";
+    window.onkeydown = (e) => {
+
+        if(_tmp == null)
+        {
+          document.getElementById("inputReturn1").style.display = "block";
+          document.getElementById("inputReturn1").innerHTML = " : <font color=\"red\">비밀번호는 필수 입력입니다.</font>";
+        }
+        
+        if(_tmp.value === ''){
+          document.getElementById("inputReturn1").style.display = "block";
+          document.getElementById("inputReturn1").innerHTML = " : <font color=\"red\">비밀번호는 필수 입력입니다.</font>";
+        }else{
+          document.getElementById("inputReturn1").style.display = "none";
+        }
     }
   }
 
   function samePw(){
     var _org1Pw = document.getElementById("inputPw1");
     var _org2Pw = document.getElementById("inputPw2");
-    if((_org1Pw.value === '')&&( _org2Pw.value  === ''))
+
+    
+    if(_org1Pw.value === '' ||  _org2Pw.value  === '' || _org1Pw == null || _org2Pw == null)
     {
-      
+        
     }else if(_org1Pw.value === _org2Pw.value){
       document.getElementById("inputReturn2").style.display = "block";
-      document.getElementById("inputReturn2").innerHTML = "<font color=\"#03c75a\">입력하신 비밀번호가 같습니다.</font>";
-      return 1;
-  
+       document.getElementById("inputReturn2").innerHTML = "<font color=\"#03c75a\">입력하신 비밀번호가 같습니다.</font>";
+       return 1;
+    
     }else{
       document.getElementById("inputReturn2").style.display = "block";
-      document.getElementById("inputReturn2").innerHTML = "<font color=\"red\">입력하신 비밀번호가 틀립니다.</font>";
-      return 0;
-    }
+       document.getElementById("inputReturn2").innerHTML = "<font color=\"red\">입력하신 비밀번호가 틀립니다.</font>";
+       return 0;
+     }
   }
+
 
   // 정규식 데이터 가공 앞으로 처리할 예정
