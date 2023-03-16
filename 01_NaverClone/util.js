@@ -84,7 +84,7 @@ function checkSelectAll()  {
   }
 
   function regexId(){
-    window.onkeydown = (e) => {  // 키보드 입력후 키보드입력이 끝날경우 발생하는 이벤트
+    window.onkeyup = (e) => {  // 키보드 입력후 키보드입력이 끝날경우 발생하는 이벤트
       var _tmp = document.getElementById("inputId0");
       if(_tmp == null)// 입력값이 아예 없을때
       {
@@ -102,7 +102,7 @@ function checkSelectAll()  {
   }
 
   function regexPw(){
-    window.onkeydown = (e) => {
+    window.onkeyup = (e) => {
         var _tmp = document.getElementById("inputPw1");
 
         if(_tmp == null)
