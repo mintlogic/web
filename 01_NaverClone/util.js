@@ -57,7 +57,7 @@ function checkSelectAll()  {
       }else if(_tmp3 == null || _tmp3.value == ''){
         debugMsg("3번 필드 : null 값");
       }else{
-        if(samePw() == 1){
+        if(chkPw() == 1){
           goPage(2); // 회원정보를 submit을 하기위한 함수 ( form 액션으로 처리 못한 이유도 함수안에 이야기가.....ㅠㅠ )
         }else{
           alert("비밀번호가 틀립니다!");
@@ -82,8 +82,8 @@ function checkSelectAll()  {
   }
 
   function regexId(){
-    var _tmp = document.getElementById("inputId0");
     window.onkeydown = (e) => {  // 키보드 입력후 키보드입력이 끝날경우 발생하는 이벤트
+      var _tmp = document.getElementById("inputId0");
       if(_tmp == null)// 입력값이 아예 없을때
       {
         document.getElementById("inputReturn0").style.display = "block";
@@ -100,8 +100,8 @@ function checkSelectAll()  {
   }
 
   function regexPw(){
-    var _tmp = document.getElementById("inputPw1");
     window.onkeydown = (e) => {
+        var _tmp = document.getElementById("inputPw1");
 
         if(_tmp == null)
         {
@@ -119,23 +119,42 @@ function checkSelectAll()  {
   }
 
   function samePw(){
-    var _org1Pw = document.getElementById("inputPw1");
-    var _org2Pw = document.getElementById("inputPw2");
+    window.onkeyup = (e) => {
+      var _org1Pw = document.getElementById("inputPw1");
+      var _org2Pw = document.getElementById("inputPw2");
+      if(_org1Pw.value === _org2Pw.value){
+        document.getElementById("inputReturn2").style.display = "block";
+        document.getElementById("inputReturn2").innerHTML = "<font color=\"#03c75a\">입력하신 비밀번호가 같습니다.</font>";
+      }else if(_org1Pw.value === '' || _org1Pw == null){
+        debugMsg("1번 비었음");
+        if((_org2Pw.value === '' || _org2Pw == null))
+        {
+          debugMsg("2번 비었음");
+          document.getElementById("inputReturn2").style.display = "block";
+          document.getElementById("inputReturn2").innerHTML = "<font color=\"red\">입력하신 비밀번호가 비어있습니다.</font>";
+        }
+      }else{
+        document.getElementById("inputReturn2").style.display = "block";
+        document.getElementById("inputReturn2").innerHTML = "<font color=\"red\">입력하신 비밀번호가 틀립니다.</font>";
+      }
+    }
+  }
 
-    
-    if(_org1Pw.value === '' ||  _org2Pw.value  === '' || _org1Pw == null || _org2Pw == null)
-    {
-        
-    }else if(_org1Pw.value === _org2Pw.value){
-      document.getElementById("inputReturn2").style.display = "block";
-       document.getElementById("inputReturn2").innerHTML = "<font color=\"#03c75a\">입력하신 비밀번호가 같습니다.</font>";
-       return 1;
-    
-    }else{
-      document.getElementById("inputReturn2").style.display = "block";
-       document.getElementById("inputReturn2").innerHTML = "<font color=\"red\">입력하신 비밀번호가 틀립니다.</font>";
-       return 0;
-     }
+  function chkPw(){
+      var _org1Pw = document.getElementById("inputPw1");
+      var _org2Pw = document.getElementById("inputPw2");
+      if(_org1Pw.value === _org2Pw.value){
+        return 1;
+      }else if(_org1Pw.value === '' || _org1Pw == null){
+        debugMsg("1번 비었음");
+        if((_org2Pw.value === '' || _org2Pw == null))
+        {
+          debugMsg("2번 비었음");
+          return 0;
+        }
+      }else{
+          return 0;
+      }
   }
 
 
