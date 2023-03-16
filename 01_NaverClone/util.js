@@ -35,8 +35,10 @@ function checkSelectAll()  {
 
       if(_tmp1.checked == false){
           debugMsg("1번 동의 안함");
+          alert("1번 필수동의 체크를 안하셨습니다.");
       }else if(_tmp2.checked == false){
           debugMsg("2번 동의 안함");
+          alert("2번 필수동의 체크를 안하셨습니다.");
       }else{
           debugMsg("필수선택 1,2 선택했음");
           goPage(1);
