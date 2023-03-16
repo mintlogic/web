@@ -129,14 +129,16 @@ body{
   /* 아이디 , 비밀번호 , 등등 사용자가 미스입력시 출력해줄 helper */
 }
 
-/*                                      */
+/* 생년월일 공간 */
 
-.inputBirthbox{
+.inputBirthbox1{
+  float:left;
   width:90px;
   background-color: white;
   /* div 안에 input박스가 있고 하나처럼 만들어주기 위한 효과 */
 }
-  .inputBirthbox > input[id=inputBirth1] {
+  .inputBirthbox1 > input[id=inputBirth1]{
+    
     border:none;
     display:relative;
     padding:8px;
@@ -144,11 +146,9 @@ body{
     /* 인풋박스 테두리 지우고 div 높낮이에 맞게 자동화 , 인풋길이를 제한 */
   }
 
-  .inputBirthbox:focus-within {
+  .inputBirthbox1:focus-within {
     width: 99px;
     color: #111111;
     border: 1px #03c75a solid;
-    /* input박스 선택시 테두리 효과 
-       참고 : https://moo-you.tistory.com/403
-    */
+    /* input박스 선택시 div 테두리 효과 */
   }
