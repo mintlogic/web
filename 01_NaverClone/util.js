@@ -112,10 +112,7 @@ function checkSelectAll()  {
     window.onkeyup = (e) => {
       var _org1Pw = document.getElementById("inputPw1");
       var _org2Pw = document.getElementById("inputPw2");
-      if(_org1Pw.value === _org2Pw.value){
-        document.getElementById("inputReturn2").style.display = "block";
-        document.getElementById("inputReturn2").innerHTML = "<font color=\"#03c75a\">입력하신 비밀번호가 같습니다.</font>";
-      }else if(_org1Pw.value === '' || _org1Pw == null){
+      if(_org1Pw.value === '' || _org1Pw == null){
         debugMsg("1번 비었음");
         if((_org2Pw.value === '' || _org2Pw == null))
         {
@@ -123,6 +120,10 @@ function checkSelectAll()  {
           document.getElementById("inputReturn2").style.display = "block";
           document.getElementById("inputReturn2").innerHTML = "<font color=\"red\">입력하신 비밀번호가 비어있습니다.</font>";
         }
+      }else if(_org1Pw.value === _org2Pw.value){
+        document.getElementById("inputReturn2").style.display = "block";
+        document.getElementById("inputReturn2").innerHTML = "<font color=\"#03c75a\">입력하신 비밀번호가 같습니다.</font>";
+      
       }else{
         document.getElementById("inputReturn2").style.display = "block";
         document.getElementById("inputReturn2").innerHTML = "<font color=\"red\">입력하신 비밀번호가 틀립니다.</font>";
@@ -141,7 +142,7 @@ function checkSelectAll()  {
           return 0;
         }
       }else if(_org1Pw.value === _org2Pw.value){
-          return 1;
+          return 1; // 값이 같을경우
       }else{
         return 0;
       }
