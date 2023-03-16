@@ -86,13 +86,7 @@ function checkSelectAll()  {
   function regexId(){
     window.onkeyup = (e) => {  // 키보드 입력후 키보드입력이 끝날경우 발생하는 이벤트
       var _tmp = document.getElementById("inputId0");
-      if(_tmp == null)// 입력값이 아예 없을때
-      {
-        document.getElementById("inputReturn0").style.display = "block";
-        document.getElementById("inputReturn0").innerHTML = " : <font color=\"red\">아이디는 필수 입력입니다.</font>";
-      }
-      
-      if(_tmp.value === ''){ // 입력값이 비어있을때
+      if(_tmp.value === '' || _tmp == null){ // 입력값이 비어있을때
         document.getElementById("inputReturn0").style.display = "block";
         document.getElementById("inputReturn0").innerHTML = " : <font color=\"red\">아이디는 필수 입력입니다.</font>";
       }else{
@@ -105,13 +99,7 @@ function checkSelectAll()  {
     window.onkeyup = (e) => {
         var _tmp = document.getElementById("inputPw1");
 
-        if(_tmp == null)
-        {
-          document.getElementById("inputReturn1").style.display = "block";
-          document.getElementById("inputReturn1").innerHTML = " : <font color=\"red\">비밀번호는 필수 입력입니다.</font>";
-        }
-        
-        if(_tmp.value === ''){
+        if(_tmp.value === '' || _tmp == null ){
           document.getElementById("inputReturn1").style.display = "block";
           document.getElementById("inputReturn1").innerHTML = " : <font color=\"red\">비밀번호는 필수 입력입니다.</font>";
         }else{
